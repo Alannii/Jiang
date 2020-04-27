@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".test.TestMVPActivity">
+
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:drawableLeft="@drawable/icon_user"
+            android:layout_marginHorizontal="40sp"
+            android:id="@+id/tf_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入用户名"
+            android:maxLines="1"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:drawableLeft="@drawable/icon_password"
+            android:layout_marginHorizontal="40sp"
+            android:id="@+id/tf_passwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40sp"
+            android:hint="请输入密码"
+            android:maxLines="1"/>/>
+
+        <Button
+            android:id="@+id/bt_login"
+            android:text="登录"
+            android:textColor="#FFF"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/login_botton"
+            android:layout_marginBottom="40sp"/>
+
+
+
+    </LinearLayout>
