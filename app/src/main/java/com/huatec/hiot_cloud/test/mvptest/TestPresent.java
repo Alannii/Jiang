@@ -1,14 +1,11 @@
-package com.huatec.hiot_cloud.test;
+package com.huatec.hiot_cloud.test.mvptest;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.widget.TextView;
 
-import com.huatec.hiot_cloud.base.BasePresenter;
-import com.huatec.hiot_cloud.main.MainActivity;
+import com.huatec.hiot_cloud.ui.base.BasePresenter;
 import com.huatec.hiot_cloud.model.User;
 
-public class TestPresent extends BasePresenter {
+public class TestPresent extends BasePresenter<TestView> {
 
     private TestView testView;
 

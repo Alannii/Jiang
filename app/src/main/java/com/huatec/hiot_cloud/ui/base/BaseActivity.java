@@ -1,4 +1,4 @@
-package com.huatec.hiot_cloud.base;
+package com.huatec.hiot_cloud.ui.base;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,26 +6,29 @@ import android.app.Application;
 import android.os.Bundle;
 
 import com.huatec.hiot_cloud.App;
-import com.huatec.hiot_cloud.R;
 import com.huatec.hiot_cloud.injection.component.ActivityComponent;
 import com.huatec.hiot_cloud.injection.component.ApplicationComponent;
 import com.huatec.hiot_cloud.injection.component.DaggerActivityComponent;
 import com.huatec.hiot_cloud.injection.module.ActivityModule;
 
-public abstract class BaseActivity<V extends BaseView,P extends BasePresenter> extends AppCompatActivity implements BaseView{
+public abstract class BaseActivity<V extends BaseView,P extends BasePresenter<V>> extends AppCompatActivity implements BaseView{
 
     private ActivityComponent mActivityComponent;
 
-    private BasePresenter presenter;
+    private P presenter;
+
+    public abstract void injectIndependies();
 
     public abstract P createPresent();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        presenter =new BasePresenter();
-        presenter.setView(this);
+        injectIndependies();
+        presenter = createPresent();
+        if (presenter != null){
+            presenter.setView((V)this);
+        }
     }
 
     @Override
@@ -72,4 +75,6 @@ public abstract class BaseActivity<V extends BaseView,P extends BasePresenter> e
     protected ActivityModule getActivityModule() {
         return new ActivityModule(this);
     }
+
+
 }

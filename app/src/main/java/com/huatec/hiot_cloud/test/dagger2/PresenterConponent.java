@@ -1,6 +1,6 @@
 package com.huatec.hiot_cloud.test.dagger2;
 
-import com.huatec.hiot_cloud.test.TestMVPActivity;
+import com.huatec.hiot_cloud.test.mvptest.TestMVPActivity;
 
 import dagger.Component;
 

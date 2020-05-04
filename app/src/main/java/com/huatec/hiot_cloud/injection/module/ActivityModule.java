@@ -19,7 +19,7 @@ import android.app.Activity;
 
 
 import com.huatec.hiot_cloud.injection.PerActivity;
-import com.huatec.hiot_cloud.test.TestPresent;
+import com.huatec.hiot_cloud.test.mvptest.TestPresent;
 
 import dagger.Module;
 import dagger.Provides;

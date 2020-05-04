@@ -1,6 +1,4 @@
-package com.huatec.hiot_cloud.test;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.huatec.hiot_cloud.test.mvptest;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,15 +8,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huatec.hiot_cloud.R;
-import com.huatec.hiot_cloud.base.BaseActivity;
-import com.huatec.hiot_cloud.main.MainActivity;
+import com.huatec.hiot_cloud.ui.base.BaseActivity;
+import com.huatec.hiot_cloud.ui.main.MainActivity;
 import com.huatec.hiot_cloud.model.User;
 
 
 import javax.inject.Inject;
 
 
-public class TestMVPActivity extends BaseActivity<TestView,TestPresent> implements TestView {
+public class TestMVPActivity extends BaseActivity<TestView, TestPresent> implements TestView {
 
     @Inject
     TestPresent testPresent;
@@ -28,7 +26,7 @@ public class TestMVPActivity extends BaseActivity<TestView,TestPresent> implemen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_m_v_p);
 
-        getActivityComponent().inject(this);
+
 
 
         testPresent.setTestView(this);
@@ -47,6 +45,11 @@ public class TestMVPActivity extends BaseActivity<TestView,TestPresent> implemen
                 testPresent.hasLogin(user1,intent);
             }
         });
+    }
+
+    @Override
+    public void injectIndependies() {
+        getActivityComponent().inject(this);
     }
 
     @Override

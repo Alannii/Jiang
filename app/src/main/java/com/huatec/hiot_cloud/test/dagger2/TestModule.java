@@ -1,6 +1,6 @@
 package com.huatec.hiot_cloud.test.dagger2;
 
-import com.huatec.hiot_cloud.test.TestPresent;
+import com.huatec.hiot_cloud.test.mvptest.TestPresent;
 
 import dagger.Module;
 import dagger.Provides;
